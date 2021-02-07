@@ -3,7 +3,6 @@ import os
 import traceback
 
 
-client.run("DISCORD_BOT_TOKEN")
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
