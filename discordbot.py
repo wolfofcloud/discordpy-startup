@@ -1,13 +1,7 @@
 from discord.ext import commands
 import os
 import traceback
-import discord
-client = discord.Client()
 
-@client.event
-async def on_ready():
-    print("on_ready")
-    print(discord.__version__)
 
 client.run("DISCORD_BOT_TOKEN")
 bot = commands.Bot(command_prefix='/')
