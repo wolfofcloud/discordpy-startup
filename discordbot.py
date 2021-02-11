@@ -1,7 +1,8 @@
-  
+import os
 import discord
+import traceback
 
-token = 'ODA4MDA3NjU1MzgwODc3Mzcz.YCARxQ.hOZkXKtZbfsH50EIwEsN9lbbTN4'
+token = os.environ['DISCORD_BOT_TOKEN']
 client=discord.Client()
 
 
