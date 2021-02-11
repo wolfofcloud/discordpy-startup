@@ -17,6 +17,12 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
+    
+@client.event
+async def on_message(message):
+    if messege.content.startswich('/create'):
+        new_channel=await creat_channel(massege,channel_name='new')
+       
 
 
 bot.run(token)
