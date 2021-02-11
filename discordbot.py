@@ -19,6 +19,6 @@ async def ping(ctx):
  
 @bot.comand()
 asnyc def test(ctx):
-    await ctx.send(`ku`)
+    await ctx.send('ku')
 
 bot.run(token)
