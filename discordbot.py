@@ -17,10 +17,14 @@ async def on_command_error(ctx, error):
 async def test(ctx,arg):
     await ctx.send(arg)
     
+@bot.event
+async def create_channel(channel_neme):
+    category = '708239634051760179'
+    new_channel = await category.create_text_channl(name=channel_name)
+    return new_channel
+
 @bot.command()
 async def create(ctx,arg):
-    category = '708239634051760179'
-    new_channel = await category.create_text_channl(arg)
-    
+    new_channnel = await create_channel(channel_name=arg)
     
 bot.run(token)
