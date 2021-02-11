@@ -26,7 +26,7 @@ async def create_channel(message, channel_name):
     return new_channel
 
 # 発言時に実行されるイベントハンドラを定義
-@client.event
+@bot.command()
 async def on_message(message):
     if message.content.startswith('/mkch'):
         # チャンネルを作成する非同期関数を実行して Channel オブジェクトを取得
@@ -37,4 +37,4 @@ async def on_message(message):
         await message.channel.send(text)
 
 
-client.run(token)
+bot.run(token)
