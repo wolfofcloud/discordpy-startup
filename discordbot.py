@@ -20,7 +20,7 @@ async def test(ctx,arg):
 @bot.event
 async def create_channel(channel_neme):
     category = '708239634051760179'
-    new_channel = await category.create_text_channl(name=channel_name)
+    new_channel = await category.create_text_channel(name=channel_name)
     return new_channel
 
 @bot.command()
