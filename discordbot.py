@@ -24,7 +24,7 @@ async def create_channel(message, channel_name):
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('/create'):
+    if message.content.startswith('/mkch'):
         new_channel = await create_channel(message, channel_name='new')
 
         # チャンネルのリンクと作成メッセージを送信
