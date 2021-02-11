@@ -19,7 +19,7 @@ async def test(ctx,arg):
     
 @bot.command()
 async def create(ctx,arg):
-    category = '708239634051760179'
+    category='708239634051760179'
     new_channel = await categoty.create_text_channl(name=arg)
     return new_channel
     
