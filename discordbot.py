@@ -7,7 +7,7 @@ client = discord.Client()
 
 @client.event
 async def on_massege(messege):
-  if messege.content=="/neko":
-    await messege.channel.send("ねこ
+  if messege.content == '/neko':
+    await messege.channel.send('ねこ')
 
 client.run(token)
