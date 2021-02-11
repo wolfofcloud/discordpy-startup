@@ -25,6 +25,6 @@ async def create_channel(channel_neme):
 
 @bot.command()
 async def create(ctx,arg):
-    new_channnel = await create_channel(channel_name=arg)
+    new_channnel = await create_channel(,channel_name=arg)
     
 bot.run(token)
