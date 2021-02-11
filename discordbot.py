@@ -19,7 +19,8 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-    
+   
+@bot.command()
 async def create_channel(message, channel_name):
     category_id = message.channel.category_id
     category = message.guild.get_channel(category_id)
