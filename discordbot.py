@@ -6,10 +6,7 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-async def create_channel(massage,channel_name):
-    category_id=708239634051760179
-    new_channel=awate category.create_text_channel(neme=channel_name)
-    return new_channnel
+
     
 
 @bot.event
@@ -23,10 +20,18 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
     
+async def create_channel(message, channel_name):
+    category_id = message.channel.category_id
+    category = message.guild.get_channel(category_id)
+    new_channel = await category.create_text_channel(name=channel_name)
+    return new_channel
+
 @client.event
 async def on_message(message):
-    if messege.content.startswich('/create'):
-        new_channel=await create_channel(massege,channel_name='new')
+    if message.content.startswith('/create'):
+        new_channel = await create_channel(message, channel_name='new')
+        text = f'{new_channel.mention} を作成しました'
+        await message.channel.send(text)
        
 
 
