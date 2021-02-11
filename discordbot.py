@@ -6,6 +6,11 @@ import traceback
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
+async def create_channel(massage,channel_name):
+    category_id=708239634051760179
+    new_channel=awate category.create_text_channel(neme=channel_name)
+    return new_channnel
+    
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -21,7 +26,7 @@ async def ping(ctx):
 @client.event
 async def on_message(message):
     if messege.content.startswich('/create'):
-        new_channel=await creat_channel(massege,channel_name='new')
+        new_channel=await create_channel(massege,channel_name='new')
        
 
 
