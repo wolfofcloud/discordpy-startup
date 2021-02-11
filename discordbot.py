@@ -20,8 +20,7 @@ async def ping(ctx):
 
 @bot.event
 async def create_channel(message, channel_name):
-    category_id = message.channel.category_id
-    category = message.guild.get_channel(category_id)
+    category = message.guild.708239634051760179
     new_channel = await category.create_text_channel(name=channel_name)
     return new_channel
 
