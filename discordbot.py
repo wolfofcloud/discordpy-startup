@@ -1,17 +1,21 @@
+from discord.ext import commands
 import os
-import discord
 import traceback
 
+bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-client = discord.Client()
 
-@client.event
-async def on_ready():
-  print('ログインしました')
-  
-@client.event
-async def on_message(message):
-  if message.content == '/neko':
-    await messege.channel.send('猫')
-$ python3 discordbot.py
-client.run(token)
+
+@bot.event
+async def on_command_error(ctx, error):
+    orig_error = getattr(error, "original", error)
+    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
+    await ctx.send(error_msg)
+
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
+
+
+bot.run(token)
