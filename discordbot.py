@@ -14,7 +14,7 @@ async def on_message(message):
         return
     if message.content == '/neko':
         await message.channel.send('にゃーん')
-        
+
 
 async def create_channel(message, channel_name):
     category_id = message.channel.category_id
