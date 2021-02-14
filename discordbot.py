@@ -27,7 +27,6 @@ async def on_message(message):
         guild = client.get_guild(GUIILD_ID)
         overwrites = {
             guild.default_role: discord.PermissionOverwrite(read_messages=False),
-            gulid.new_role: discord.PermissionOverwrite(read_messages=False),
             guild.me: discord.PermissionOverwrite(read_messages=True)
         }
         
