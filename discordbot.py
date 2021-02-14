@@ -22,14 +22,12 @@ async def on_message(message):
     if message.content == '/neko':
         await message.channel.send('にゃーん')
 
-
 # 発言時に実行されるイベントハンドラを定義
 @client.event
 async def on_message(message):
     if message.content.startswith('/mkch'):
         # チャンネルを作成する非同期関数を実行して Channel オブジェクトを取得
         new_channel = await create_channel(message, channel_name='new')
-
         # チャンネルのリンクと作成メッセージを送信
         text = f'{new_channel.mention} を作成しました'
         await message.channel.send(text)
