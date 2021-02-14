@@ -23,6 +23,7 @@ async def on_message(message):
         cot=cot.replace('/create ','')
         guild = message.guild
         new_role = await guild.create_role(name=cot)
+        
         overwrites = {
             guild.default_role: discord.PermissionOverwrite(read_messages=False),
             guild.me: discord.PermissionOverwrite(read_messages=True)
