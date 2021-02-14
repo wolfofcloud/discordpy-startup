@@ -21,8 +21,7 @@ async def on_message(message):
         return
     if message.content == '/neko':
         await message.channel.send('にゃーん')
-
-# 発言時に実行されるイベントハンドラを定義
+        
 @client.event
 async def on_message(message):
     if message.content.startswith('/mkch'):
