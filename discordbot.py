@@ -12,7 +12,7 @@ async def create_channel(message, channel_name):
     return new_channel
 
 async def create_role(role_name):
-    new_role = await create_role(name=role_name)
+    new_role = await client.create_role(name=role_name)
     return new_role
 
 @client.event
