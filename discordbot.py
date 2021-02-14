@@ -11,6 +11,10 @@ async def create_channel(message, channel_name):
     new_channel = await category.create_text_channel(name=channel_name)
     return new_channel
 
+async def create_role(role_name):
+    new_role = await create_role(name=role_name)
+    return new_role
+
 @client.event
 async def on_ready():
     print('ログインしました')
@@ -21,6 +25,7 @@ async def on_message(message):
     if message.content.startswith('/create'):
         cot=message.content
         cot=cot.replace('/create ','')
+        new_role = await create_role(role_name=cot)
         # チャンネルを作成する非同期関数を実行して Channel オブジェクトを取得
         new_channel = await create_channel(message, channel_name=cot)
         # チャンネルのリンクと作成メッセージを送信
