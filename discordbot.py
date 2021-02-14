@@ -21,7 +21,7 @@ async def on_message(message):
     if message.content.startswith('/create'):
         cot=message.content
         # チャンネルを作成する非同期関数を実行して Channel オブジェクトを取得
-        new_channel = await create_channel(message, channel_name='cot')
+        new_channel = await create_channel(message, channel_name=cot)
         # チャンネルのリンクと作成メッセージを送信
         text = f'{new_channel.mention} を作成しました'
         await message.channel.send(text)
