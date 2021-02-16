@@ -8,7 +8,7 @@ client = discord.Client()
 async def create_channel(message, channel_name,overwrites):
     category_id = 687069139067600897
     category = message.guild.get_channel(category_id)
-    guild = client.get_guild(661027381980561409)
+    guild = client.get_guild(guild_id)
     new_channel = await guild.category.create_text_channel(name=channel_name,overwrites=overwrites)
     return new_channel
 
@@ -25,7 +25,7 @@ async def on_message(message):
         guild = message.guild
         new_role = await guild.create_role(name=cot)
         guild = message.guild
-        guild = client.get_guild(661027381980561409)
+        guild = client.get_guild(guild_id)
         overwrites = {
             guild.default_role: discord.PermissionOverwrite(read_messages=False),
             guild.me: discord.PermissionOverwrite(read_messages=True)
