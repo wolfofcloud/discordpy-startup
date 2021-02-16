@@ -6,9 +6,9 @@ client = discord.Client()
 
 # 発言したチャンネルのカテゴリ内にチャンネルを作成する非同期関数
 async def create_channel(message, channel_name,overwrites):
-    category_id = 708239634051760179
+    category_id = 687069139067600897
     category = message.guild.get_channel(category_id)
-    guild = client.get_guild(708224121607028757)
+    guild = client.get_guild(661027381980561409)
     new_channel = await guild.category.create_text_channel(name=channel_name,overwrites=overwrites)
     return new_channel
 
@@ -25,7 +25,7 @@ async def on_message(message):
         guild = message.guild
         new_role = await guild.create_role(name=cot)
         guild = message.guild
-        guild = client.get_guild(708224121607028757)
+        guild = client.get_guild(661027381980561409)
         overwrites = {
             guild.default_role: discord.PermissionOverwrite(read_messages=False),
             guild.me: discord.PermissionOverwrite(read_messages=True)
