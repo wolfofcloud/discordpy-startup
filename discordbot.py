@@ -1,5 +1,6 @@
 import discord
 import os
+import traceback
 
 TOKEN = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()
@@ -14,6 +15,12 @@ async def create_channel(message, channel_name,overwrites):
     category = message.guild1.get_channel(category_id)
     new_channel = await guild2.create_text_channel(name=channel_name,overwrites=overwrites,category=category)
     return new_channel
+
+@client.event
+async def on_command_error(ctx, error):
+    orig_error = getattr(error, "original", error)
+    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
+    await ctx.send(error_msg)
 
 @client.event
 async def on_ready():
