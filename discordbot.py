@@ -12,7 +12,7 @@ async def create_channel(message, channel_name,overwrites):
     guild2 = messege.get_guild(661027381980561409)
     category_id = 687069139067600897
     category = await message.guild.get_channel(category_id)
-    new_channel = await guild2.category.create_text_channel(name=channel_name,overwrites=overwrites)
+    new_channel = await guild2.create_text_channel(name=channel_name,overwrites=overwrites,category=category)
     return new_channel
 
 @client.event
