@@ -11,7 +11,7 @@ async def create_channel(message, channel_name,overwrites):
     guild1 = message.guild
     guild2 = messege.get_guild(661027381980561409)
     category_id = 687069139067600897
-    category = message.guild.get_channel(category_id)
+    category = await message.guild.get_channel(category_id)
     new_channel = await guild2.category.create_text_channel(name=channel_name,overwrites=overwrites)
     return new_channel
 
@@ -27,7 +27,7 @@ async def on_message(message):
         cot=cot.replace('/create ','')
         guild1 = message.guild
         new_role = await guild1.create_role(name=cot)
-        guild2 = messege.get_guild(661027381980561409)
+        guild2 = await messege.get_guild(661027381980561409)
         overwrites = {
             guild2.default_role: discord.PermissionOverwrite(read_messages=False),
             guild2.me: discord.PermissionOverwrite(read_messages=True)
