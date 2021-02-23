@@ -9,7 +9,7 @@ client = discord.Client()
 async def on_message(message):
     if message.content.startswith('/create'):
         # discord.Guild.create_text_channelを使用する
-        guild = client.get_guild(661027381980561409)
+        guild = client.get_guild(GUILD_ID)
         # @everyoneは発言できないが、自分はできる
         overwrites = {guild.default_role: discord.PermissionOverWrite(send_messages=False),
                       guild.me: discord.PermissionOverWrite(send_messages=True)
