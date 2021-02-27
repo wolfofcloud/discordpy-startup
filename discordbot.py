@@ -4,8 +4,6 @@ import traceback
 
 TOKEN = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()
-guild = discord.Guild()
-# get_guild
 
 
 
