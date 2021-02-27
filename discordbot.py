@@ -8,13 +8,13 @@ client = discord.Client()
 @client.event
 async def on_message(message):
     if message.content.startswith('/create'):
-        # discord.Guild.create_text_channelを使用する
-        guild = client.get_guild(GUILD_ID)
-        # @everyoneは発言できないが、自分はできる
+        guild = client.get_guild(661027381980561409)
+        cot=message.content
+        cot=cot.replace('/create ','')
         overwrites = {guild.default_role: discord.PermissionOverWrite(send_messages=False),
                       guild.me: discord.PermissionOverWrite(send_messages=True)
                      }
-        new_channel = await guild.create_text_channel(name="お知らせ", overwrites=overwrites, topic="お知らせを表示します。")
+        new_channel = await guild.create_text_channel(name=cot, overwrites=overwrites)
         print(f"#{new_channel.name} を作成しました。")
         
 
