@@ -4,13 +4,13 @@ import traceback
 
 TOKEN = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()
+guild = discord.Guild()
 # get_guild
 
 
 
 async def create_channel(message, channel_name):
-    guild1 = message.guild
-    new_channel = await create_text_channel(name=channel_name)
+    new_channel = await guild.create_text_channel(name=channel_name)
     return new_channel
 
 @client.event
