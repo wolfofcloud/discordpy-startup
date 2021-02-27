@@ -8,11 +8,9 @@ client = discord.Client()
 
 
 
-async def create_channel(message, channel_name,):
+async def create_channel(message, channel_name):
     guild1 = message.guild
-    category_id = 687069139067600897
-    category = message.guild1.get_channel(category_id)
-    new_channel = await create_text_channel(name=channel_name,category=category)
+    new_channel = await create_text_channel(name=channel_name)
     return new_channel
 
 @client.event
