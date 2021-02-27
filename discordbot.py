@@ -27,6 +27,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content.startswith('/create'):
+        await messege.channel.send('a')
         cot=message.content
         cot=cot.replace('/create ','')
         new_channel = await create_channel(message, channel_name=cot)
