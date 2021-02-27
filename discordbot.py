@@ -8,7 +8,7 @@ client = discord.Client()
 
 
 
-async def create_channel(message, hannel_name,):
+async def create_channel(message, channel_name,):
     guild1 = message.guild
     category_id = 687069139067600897
     category = message.guild1.get_channel(category_id)
@@ -31,12 +31,7 @@ async def on_message(message):
     if message.content.startswith('/create'):
         cot=message.content
         cot=cot.replace('/create ','')
-        guild1 = message.guild
-        new_role = await guild1.create_role(name=cot)
-        guild2 = client.get_guild(661027381980561409)
-        # チャンネルを作成する非同期関数を実行して Channel オブジェクトを取得
-        new_channel = await create_channel(message, channel_name=cot,)
-        # チャンネルのリンクと作成メッセージを送信
+        new_channel = await create_channel(message, channel_name=cot)
         text = f'{new_channel.mention} を作成しました'
         await message.channel.send(text)
         
