@@ -39,6 +39,11 @@ async def on_message(message):
         await new_channel.set_permissions(new_role, overwrite=overwrite)
         text = f'{new_channel.mention} を作成しました'
         await message.channel.send(text)
-
+    if message.content.startswith("/join"):
+        cot=message.content
+        cot=cot.replace('/join ','')
+        member=message.author
+        role=discord.utils.get(message.guild.roles, name=cot)
+        await member.add_roles(role)
 
 client.run(TOKEN)
