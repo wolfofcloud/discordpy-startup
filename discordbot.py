@@ -45,5 +45,8 @@ async def on_message(message):
         member=message.author
         role=discord.utils.get(message.guild.roles, name=cot)
         await member.add_roles(role)
+         text = '権限を付与しました'
+        await message.channel.end(text)
+    
 
 client.run(TOKEN)
