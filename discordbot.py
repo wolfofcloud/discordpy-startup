@@ -46,7 +46,14 @@ async def on_message(message):
         role=discord.utils.get(message.guild.roles, name=cot)
         await member.add_roles(role)
         text = '権限を付与しました'
-        await message.channel.end(text)
+        await message.channel.send(text)
+    if message.content.startswith("/del "):
+        cot=message.content
+        cot=cot.replace('/del ','')
+        role=discord.utils.get(message.guild.roles, name=cot)
+        channel = discord.utils.get(client.get_all_channels(), name=cot)
+        await role.delete()
+        await channel.delete()
     
 
 client.run(TOKEN)
